@@ -40,27 +40,13 @@ function App() {
     setCurrentVideo(newVideo);
   }
 
-  
-
-// function handleChange(newValue) {
-//   setValue(newValue);
-// }
-
-// We pass a callback to Child
-// return <Child value={value} onChange={handleChange} />;
-
-
-
-
-
-
   return (
     <>
-    <Header name={obj}/>
-    <CurrentVideo id={currentId} />
-    <MainContent currentVideo={currentVideo} />
-    <VideoList videos={videosData} handleVideoChange={handleVideoChange} />
-    
+      <Header name={obj}/>
+      <CurrentVideo id={currentId} />
+      <MainContent currentVideo={currentVideo} />
+      <VideoList videos={videosData} handleVideoChange={handleVideoChange} />
+      
     </>
   );
 }
