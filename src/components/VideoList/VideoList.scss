@@ -1,0 +1,32 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+// body {
+//     padding: 0;
+//     margin: 0;
+// }
+
+// TODO fix image zoom in
+// TODO fix content items spacing i.e. the channel and title should be further apart
+.videos {
+    border: red solid;
+    padding: 1rem;
+
+    &__title {
+        color: $silver;
+    }
+
+    &__list {
+        list-style: none;
+        border: blue solid;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    // &__item {
+    //     border: green solid;
+    // }
+}

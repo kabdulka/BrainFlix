@@ -26,7 +26,7 @@ body {
     @include tablet {
         padding: 1rem 2rem;
         flex-direction: row;
-        gap: 10rem;
+        gap: 6rem;
         align-items: baseline;
         justify-content: space-between;
     }
@@ -40,13 +40,15 @@ body {
         // background-image: url('../../assets/Icons/search.svg');
     }
 
+    // TODO style this so it drops a bit lower to align with the rest of
+    // the container
     &__logo-container {
         border: red solid;
         text-align: center;
 
         @include tablet {
             display: flex;
-            // align-;
+ 
         }
         
     }
@@ -71,6 +73,10 @@ body {
             margin: 0;
             flex-wrap: nowrap;
             justify-content: space-between;
+        }
+
+        @include desktop {
+            gap: 1.5rem;
         }
     }
 
@@ -102,7 +108,7 @@ body {
         @include tablet {
             order: 1;
             // max-width: 16rem;
-            width: 11rem;
+            width: 10.25rem;
         }
 
         @include tablet {
@@ -147,7 +153,7 @@ body {
 
         @include tablet {
             // background-color: red;
-            max-width: 10rem;
+            max-width: 9.5rem;
         }
     }
 

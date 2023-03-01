@@ -1,0 +1,57 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+
+
+.videos__item {
+    width: 100%;
+    height: 4rem;
+    border: green solid;
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+// Fix the text and prevent it from overflowing to the bottom
+
+.videos__content-title {
+    font-size: 0.75rem;
+}
+
+.videos__content-channel {
+    font-size: 0.75rem;
+
+}
+
+
+.videos__content {
+    border: purple solid;
+    height: 100%;
+    flex: 1;
+    // display: flex;
+    // flex-direction: column;
+    // align-content: center;
+    // gap: 1rem;
+}
+
+.videos__image-container {
+    // height: 3.75rem;
+    height: 100%;
+    width: 6.5rem;
+    // width: 100%;
+    border: red solid;
+    // object-fit: cover;
+    
+}
+
+.videos__image {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.25rem;
+    background-color: $mercury;
+
+    // padding-inline-start: 0px;
+    // margin-left: 0%;
+
+}

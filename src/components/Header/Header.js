@@ -2,13 +2,26 @@
 import "./Header.scss";
 // import searchIcon from '../../assets/Icons/search.svg';
 import logo from '../../assets/Logo/BrainFlix-logo.svg';
-import avatar from '../../assets/Images/Mohan-muruge.jpg'
+import avatar from '../../assets/Images/Mohan-muruge.jpg';
+
 // import SearchIcon from '../..'
 // import searchIcon from
 
-const Header = () => {
+
+// delete props later
+const Header = (props) => {
+
+    // function props test
+    // const handleClick = () => {
+    //     console.log("click");
+    // }
+
+    // const data = jsonData;
+    // console.log(data[0]);
+
     return ( 
         <>
+            <h1> Prop test: {props.name.firstName} </h1>
             <header className="header">
                 <div className="header__logo-container">
                     <a className='header__logo-link' href=""> 
