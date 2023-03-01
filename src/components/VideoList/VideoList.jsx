@@ -11,6 +11,10 @@ console.log(videosData);
 
 const VideoList = (props) => {
 
+    // function handleVideoChange (newVideo) {
+    //     setCurrentVideo(newVideo);
+    //   }
+    
     // const data = JSON.parse(videosData);
    
     // get the ID of the 
@@ -29,7 +33,9 @@ const VideoList = (props) => {
                                 id={video.id} 
                                 image={video.image} 
                                 title={video.title} 
-                                channel={video.channel} />
+                                channel={video.channel}
+                                videoObj = {video}
+                                handdleVideoChange = {props.handleVideoChange} />
                     )}
                 </ul>
             </aside>

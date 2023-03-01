@@ -1,0 +1,21 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+// TODO change this into a background image
+
+.current-video {
+
+    padding: 1rem;
+
+    &__title {
+        padding-bottom: 1rem;
+        border-bottom: $silver solid;
+    }
+
+}
+.current-video__image {
+    height: 10rem;
+    width: 100%;
+    border: red solid;
+}
