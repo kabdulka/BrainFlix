@@ -3,6 +3,30 @@ import likesIcon from '../../assets/Icons/likes.svg';
 import viewsIcon from '../../assets/Icons/views.svg'
 
 const MainContent = ({currentVideo}) => {
+
+
+    function getFormatedDate (timeStamp) {
+        const postedDate = new Date(timeStamp);
+        postedDate.toLocaleDateString('en-US');
+         
+        let day = postedDate.getDate() + "";
+        let month = postedDate.getMonth() + "";
+        let year = postedDate.getFullYear() + "";
+        let hoursInSeconds = postedDate.getHours()*3600;
+        let minutesInSeconds = postedDate.getMinutes()*60;
+        let seconds = postedDate.getSeconds();
+        let totalTimeInSec = hoursInSeconds + minutesInSeconds + seconds;
+    
+        if (postedDate.getMonth()/10 < 1 ) {
+            month++;
+            month = "0" + month;
+        }
+        if (postedDate.getDate()/10 < 1 ) {
+            day = "0" + day;
+        }
+        return `${month}/${day}/${year}`;
+    } // end getFormatedDate function
+
     return (
         <>
         <main className='current-video'>
@@ -16,7 +40,7 @@ const MainContent = ({currentVideo}) => {
                 <div className="current-video__flex1">
 
                     <p className="current-video__channel"> by {currentVideo.channel} </p>
-                    <p className="current-video__date"> {currentVideo.timestamp} </p>
+                    <p className="current-video__date"> {getFormatedDate(currentVideo.timestamp)} </p>
 
                 </div>
             

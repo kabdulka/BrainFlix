@@ -1,0 +1,199 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.form {
+    padding: 0rem 1rem 0rem 1rem;
+
+    @include tablet {
+        margin-top: 2rem;
+    }
+
+    @include desktop {
+
+    }
+
+    &__title {
+        font-size: 1.55rem;
+        font-weight: 600;
+        margin-top: 1rem;
+
+        @include tablet {
+            font-size: 2.32rem;
+            padding: 0rem 1rem;
+        }
+
+        @include desktop {
+            padding: 1rem 7rem 0rem 7rem;
+
+        }
+    }
+
+    &__container {
+
+        @include tablet {
+            margin-top: 2.5rem;
+            padding: 0rem 5rem;
+
+        }
+
+        @include desktop {
+            padding: 0rem 23.5rem;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 0.75rem;
+        border-bottom: $mercury 1px solid;
+        padding-bottom: 1rem;
+        margin-top: 1.5rem;
+
+        @include tablet {
+            padding-bottom: 1.5rem;
+        }
+
+        @include desktop {
+
+        }
+
+    }
+
+    &__comment {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 1.25rem;
+
+        @include tablet {
+
+        }
+
+        @include desktop {
+
+        }
+
+
+        &__btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &-btn {
+            background-color: $brainFlix-blue;
+            border: none;
+            color: $white;
+            padding: 0.5rem 2rem;
+            height: 2.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            width: 100%;
+            cursor: pointer;
+    
+            @include tablet {
+
+                width: 9.75rem;
+                font-size: 1rem;
+
+  
+            }
+
+            @include desktop {
+                width: 9.4rem;
+            }
+        }
+
+        
+        &-name {
+
+            height: 2.25rem;
+            border-radius: 0.25rem;
+            padding: 0.75rem;
+            background-color: $albaster;
+            border: 0.0625rem solid $mercury;
+    
+            &::placeholder {
+                color: black;
+                font-size: 0.85rem;
+                font-family: 'AvenirNext LT Pro';
+            }
+
+            &:focus {
+    
+                outline: 2px solid black;
+            }
+
+    
+            @include tablet {
+                padding: 1.5rem 1rem;
+                
+            }
+
+            &--error {
+                outline: 2px solid red;
+
+                &:focus {
+                    outline: 2px solid red;
+                }
+                &::placeholder {
+                    color: red;
+                }   
+            }
+        }
+
+        &-label {
+            color: $silver;
+            font-weight: 600;
+            font-size: 0.6rem;
+
+            @include tablet {
+                font-size: 0.75rem;
+            }
+        }
+
+        &-text {
+            height: 6rem;
+            border-radius: 0.25rem;
+            padding: 0.75rem;
+            border: 0.0625rem solid $mercury;
+            background-color: $albaster;
+            resize: none;
+    
+            &::placeholder {
+                color: black;
+                font-size: 0.85rem;
+                font-family: 'AvenirNext LT Pro';
+            }
+    
+            &:focus {
+
+                outline: 2px solid black;
+            }
+
+            &--error {
+                outline: 2px solid red;
+
+                &:focus {
+                    outline: 2px solid red;
+                }
+                &::placeholder {
+                    color: red;
+                }   
+            }
+
+        }
+
+
+
+    }
+
+
+    &__info-container {
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+
+} // e

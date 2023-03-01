@@ -35,7 +35,8 @@ const VideoList = (props) => {
                                 title={video.title} 
                                 channel={video.channel}
                                 videoObj = {video}
-                                handdleVideoChange = {props.handleVideoChange} />
+                                handleVideoChange = {props.handleVideoChange} 
+                                handleCommentChange = {props.handleCommentChange}/>
                     )}
                 </ul>
             </aside>
