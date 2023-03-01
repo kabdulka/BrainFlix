@@ -8,15 +8,9 @@ import './components/VideoList/VideoList';
 import VideoList from './components/VideoList/VideoList';
 import { useState } from "react";
 import MainContent from './components/MainContent/MainContent';
-import Comments from './components/Comments/Comments.jsx';
+import CommentsForm from './components/CommentsForm/CommentsForm.jsx';
 
 function App() {
-
-// first Id
-//  console.log("Printing current initial Id");
-  // console.log(jsonData);
-  // const currentId = VideoList
-  // const [currentVideo, setCurrentVideo] = useState(id);
 
   const obj = {firstName: "kenan"};
 
@@ -44,13 +38,13 @@ function App() {
   function handleCommentChange (newComment) {
     setCurrentComment(newComment);
   }
-
+  //comments={currentComment}
   return (
     <>
       <Header name={obj}/>
       <CurrentVideo id={currentId} />
       <MainContent currentVideo={currentVideo} />
-      <Comments comments={currentComment} />
+      <CommentsForm  />
       <VideoList videos={videosData} handleVideoChange={handleVideoChange} handleCommentChange={handleCommentChange} />
     </>
   );

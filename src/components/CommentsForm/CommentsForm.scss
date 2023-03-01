@@ -197,3 +197,24 @@
 
 
 } // e
+
+
+.comment__image {
+    background-color: $mercury;
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+    object-position: 30% 60%;
+    border-radius: 50%;
+
+    &--form {
+        margin-top: 1rem;
+    }
+
+    @include tablet {
+        height: 3.25rem;
+        width: 3.25rem;
+        max-height: 3.25rem;
+        max-width: 3.25rem;
+    }
+}

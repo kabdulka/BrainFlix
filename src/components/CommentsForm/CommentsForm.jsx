@@ -1,4 +1,4 @@
-import '../Comments/Comments.scss';
+import './CommentsForm.scss';
 import avatar from '../../assets/Images/Mohan-muruge.jpg';
 
 const CommentInfo = ({comments}) => {
