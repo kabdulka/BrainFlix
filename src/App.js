@@ -9,6 +9,8 @@ import VideoList from './components/VideoList/VideoList';
 import { useState } from "react";
 import MainContent from './components/MainContent/MainContent';
 import CommentsForm from './components/CommentsForm/CommentsForm.jsx';
+import CommentList from './components/CommentList/CommentList.jsx';
+
 
 function App() {
 
@@ -28,7 +30,7 @@ function App() {
   console.log(videosData[0].comments)
   // Initialize the current video to be the first video object in the json array of objects
   const [currentVideo, setCurrentVideo] = useState(currentVid);
-  const [currentComment, setCurrentComment] = useState([comments]);
+  const [currentComment, setCurrentComment] = useState(comments);
   // Use a callback to handle the change in currentId using setCurrentId
 
   function handleVideoChange (newVideo) {
@@ -41,11 +43,20 @@ function App() {
   //comments={currentComment}
   return (
     <>
+    <div className="app__contant">
       <Header name={obj}/>
       <CurrentVideo id={currentId} />
-      <MainContent currentVideo={currentVideo} />
-      <CommentsForm  />
-      <VideoList videos={videosData} handleVideoChange={handleVideoChange} handleCommentChange={handleCommentChange} />
+      <div className="main__content">
+        <div className="main__content-left">
+          <MainContent currentVideo={currentVideo} />
+          <CommentsForm  />
+          <CommentList comments={currentComment}/>
+        </div>
+        <div className="main__content-right"v>
+          <VideoList videos={videosData} handleVideoChange={handleVideoChange} handleCommentChange={handleCommentChange} />
+        </div>
+      </div>
+    </div>
     </>
   );
 }

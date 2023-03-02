@@ -21,13 +21,13 @@ const CommentInfo = ({comments}) => {
 
                         <form className="form__comment">
 
-                            <div className="form__info-container">
+                            {/* <div className="form__info-container">
                                 <label className="form__comment-label  form__comment__name--label" htmlFor="name"> NAME </label>
                                 <input className="form__comment-name  form__comment__name--value" type="text" id="name" name="name" placeholder="Enter your name" />
-                            </div>
+                            </div> */}
 
                             <div className="form__info-container">
-                                <label className="form__comment-label form__comment-text--label" htmlFor="comment"> COMMENT </label>
+                                <label className="form__comment-label form__comment-text--label" htmlFor="comment"> JOIN THE CONVERSATION </label>
                                 <textarea className="form__comment-text form__comment-text--value" id="comment" name="comment" placeholder="Add a new comment" ></textarea>
                             </div>
 

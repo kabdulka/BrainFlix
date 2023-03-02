@@ -21,18 +21,18 @@ body {
     display: flex;
     flex-direction: column;
     // flex-wrap: wrap;
-    padding: 1rem;
+    // padding: 1rem;
 
     @include tablet {
         padding: 1rem 2rem;
         flex-direction: row;
-        gap: 6rem;
+        // gap: 6rem;
         align-items: baseline;
         justify-content: space-between;
     }
 
     @include desktop {
-        padding: 1rem 8.5rem;
+        padding: 1rem 0rem;
     }
 
     &__search {

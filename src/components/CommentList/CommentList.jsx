@@ -1,24 +1,31 @@
 import jsonData from '../../Data/video-details.json';
 import Comment from '../Comment/Comment';
+import '../CommentList/CommentList.scss';
 
-const CommentList = ({}) => {
+const CommentList = ({comments}) => {
 
+    // console.log("inside comments lis;lj;lkj;ljk;lkjt");
+    // console.log(comments[0][0])
     return ( 
         <>
-        <h1> {} </h1>
+     
         <section className='comments'>
                 {/* <h2 className="videos__title"> Next Videos </h2> */}
                
                 {/* <VideoList /> */}
                 {/* getting data from App props */}
             <ul className='comments__list'>
-                {props.videos.map((video) => 
+
+                {comments.map((comment) => 
+                    // console.log("here")
+                    // console.log(comment.name);
                     // Map returns new data use it instead of a for each loop
                     <Comment  
-                            handleVideoChange = {props.handleVideoChange} 
-                            handleCommentChange = {props.handleCommentChange}/>
-                    )}
+                           key={comment.id} currentComment={comment}/>
+                
+                           )}
             </ul>
+
         </section>
 
         </>

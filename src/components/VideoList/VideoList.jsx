@@ -9,7 +9,7 @@ import '../VideoList/VideoList.scss';
 // const data = videosData;
 console.log(videosData);
 
-const VideoList = (props) => {
+const VideoList = ({videos, handleVideoChange, handleCommentChange}) => {
 
     // function handleVideoChange (newVideo) {
     //     setCurrentVideo(newVideo);
@@ -18,7 +18,7 @@ const VideoList = (props) => {
     // const data = JSON.parse(videosData);
    
     // get the ID of the 
-    console.log(props.videos);
+    console.log(videos);
     return (  
         <>
             <aside className='videos'>
@@ -27,7 +27,7 @@ const VideoList = (props) => {
                 {/* <VideoList /> */}
                 {/* getting data from App props */}
                 <ul className='videos__list'>
-                    {props.videos.map((video) => 
+                    {videos.map((video) => 
                         // Map returns new data use it instead of a for each loop
                         <Video  key={video.id} 
                                 id={video.id} 
@@ -35,8 +35,8 @@ const VideoList = (props) => {
                                 title={video.title} 
                                 channel={video.channel}
                                 videoObj = {video}
-                                handleVideoChange = {props.handleVideoChange} 
-                                handleCommentChange = {props.handleCommentChange}/>
+                                handleVideoChange = {handleVideoChange} 
+                                handleCommentChange = {handleCommentChange}/>
                     )}
                 </ul>
             </aside>

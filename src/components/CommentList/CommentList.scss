@@ -1,2 +1,20 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+
+.comments {
+    // padding: 0rem 1rem;
+    border: red solid;
+    // &__list
+    margin: 0;
+}
+
+.comments__list {
+    // border: red solid;
+    padding: 0;
+}
+
+.comments__list {
+    // border: red solid;
+   
+}

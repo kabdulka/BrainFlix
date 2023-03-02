@@ -1,2 +1,99 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+
+    .comment__item {
+        display: flex;
+
+        border-bottom: $mercury 1px solid;
+        gap: 0.75rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    .comment__value {
+        width: 30%;
+    }
+
+    .comment__image {
+        background-color: $mercury;
+        height: 36px;
+        width: 36px;
+        object-fit: cover;
+        object-position: 30% 60%;
+        border-radius: 50%;
+        // border: red solid;
+
+        // &--form {
+        //     margin-top: 1rem;
+        // }
+
+        @include tablet {
+            height: 3.25rem;
+            width: 3.25rem;
+            max-height: 3.25rem;
+            max-width: 3.25rem;
+        }
+    }
+
+    .comment__info {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        &__row-1 {
+   
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .comment__value {
+        width: 100%;
+        font-size: 0.825rem;
+        line-height: 1.5;
+
+        @include tablet {
+            font-size: 0.875rem;
+        }
+    }
+
+    .comment__name {
+        // border: red solid;
+        font-size: 0.875rem;
+        font-weight: 600;
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
+    }
+
+    .comment__date {
+        font-size: 0.78rem;
+        color: $silver;
+
+        @include tablet {
+            font-size: 0.875rem;
+        }
+    }
+
+    .comment__edit {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .comment__delete {
+        cursor: pointer;
+    }
+
+    .comment__like {
+        cursor: pointer;
+    }
+

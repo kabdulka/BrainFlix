@@ -6,7 +6,12 @@
 
 .current-video {
 
-    padding: 1rem;
+    // padding: 1rem;
+    width: 100%;
+
+    @include desktop {
+        width: 66%;
+    }
 
     &__title {
         padding-bottom: 1rem;

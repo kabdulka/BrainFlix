@@ -3,7 +3,7 @@
 
 
 .form {
-    padding: 0rem 1rem 0rem 1rem;
+    // padding: 0rem 1rem 0rem 1rem;
 
     @include tablet {
         margin-top: 2rem;
@@ -19,12 +19,12 @@
         margin-top: 1rem;
 
         @include tablet {
-            font-size: 2.32rem;
-            padding: 0rem 1rem;
+            // font-size: 2.32rem;
+            // padding: 0rem 1rem;
         }
 
         @include desktop {
-            padding: 1rem 7rem 0rem 7rem;
+            // padding: 1rem 7rem 0rem 7rem;
 
         }
     }
@@ -33,12 +33,12 @@
 
         @include tablet {
             margin-top: 2.5rem;
-            padding: 0rem 5rem;
+            // padding: 0rem 5rem;
 
         }
 
         @include desktop {
-            padding: 0rem 23.5rem;
+            // padding: 0rem 23.5rem;
         }
     }
 
