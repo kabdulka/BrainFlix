@@ -16,23 +16,33 @@
 // Fix the text and prevent it from overflowing to the bottom
 
 .videos__content-title {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
+    margin: 0;
 }
 
 .videos__content-channel {
-    font-size: 0.75rem;
-
+    font-size: 0.85rem;
+    margin: 0;
 }
 
 
 .videos__content {
-    border: purple solid;
-    height: 100%;
-    flex: 1;
+    // border: purple solid;
+    // height: 100%;
+    // flex: 1;
     // display: flex;
     // flex-direction: column;
     // align-content: center;
     // gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: purple solid;
+    height: 100%;
+    justify-content: space-around;
+    /* gap: 1rem; */
+    // flex: 1;
+    width: 11rem;
+
 }
 
 .videos__image-container {
@@ -50,7 +60,8 @@
     width: 100%;
     border-radius: 0.25rem;
     background-color: $mercury;
-
+    object-fit: cover;
+    // object-position: 0%
     // padding-inline-start: 0px;
     // margin-left: 0%;
 
