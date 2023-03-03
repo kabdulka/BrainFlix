@@ -10,7 +10,7 @@ import { useState } from "react";
 import MainContent from './components/MainContent/MainContent';
 import CommentsForm from './components/CommentsForm/CommentsForm.jsx';
 import CommentList from './components/CommentList/CommentList.jsx';
-
+// import CurrentVideo from './components/CurrentVideo/CurrentVideo/jsx';
 
 function App() {
 
@@ -44,16 +44,17 @@ function App() {
   return (
     <>
     <div className="app__contant">
-      <Header name={obj}/>
-      <CurrentVideo id={currentId} />
+      <Header/>
+      <CurrentVideo id={currentId} currentVideo={currentVideo}/>
       <div className="main__content">
         <div className="main__content-left">
+          
           <MainContent currentVideo={currentVideo} />
           <CommentsForm  />
           <CommentList comments={currentComment}/>
         </div>
         <div className="main__content-right"v>
-          <VideoList videos={videosData} handleVideoChange={handleVideoChange} handleCommentChange={handleCommentChange} />
+          <VideoList videos={videosData.filter(e => e.id !== currentVideo.id)} handleVideoChange={handleVideoChange} handleCommentChange={handleCommentChange} />
         </div>
       </div>
     </div>

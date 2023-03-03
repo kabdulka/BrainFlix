@@ -9,7 +9,7 @@ const CommentInfo = ({comments}) => {
         <>
             <section className="form">
 
-                <h1 className="form__title"> Join the Conversation  </h1>
+                {/* <h1 className="form__title"> Join the Conversation  </h1> */}
 
                 <div className="form__container">
 

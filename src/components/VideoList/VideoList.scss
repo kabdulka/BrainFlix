@@ -13,11 +13,16 @@
     border: red solid;
     // padding: 1rem;
 
+    @include desktop {
+        padding-left: 1.5rem;
+    }
+
     &__title {
         color: $silver;
     }
 
     &__list {
+        
         list-style: none;
         border: blue solid;
         display: flex;

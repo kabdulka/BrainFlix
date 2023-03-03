@@ -30,10 +30,10 @@ const MainContent = ({currentVideo}) => {
     return (
         <>
         <main className='current-video'>
-            <img className="current-video__image" src={currentVideo.image} />
+            {/* <img className="current-video__image" src={currentVideo.image} /> */}
             {/* <video source={currentVideo.video} > </video> */}
 
-            <h2 className="current-video__title"> Current video name is: {currentVideo.title} </h2>
+            <h2 className="current-video__title">  {currentVideo.title} </h2>
             
             <div className="current-video__info">
 
@@ -45,24 +45,25 @@ const MainContent = ({currentVideo}) => {
                 </div>
             
                 <div className="current-video__flex2">
-                   
-                  
-                    <div className="current-video__likes-container">
-                        <img src={likesIcon}/>
-                        <p className="current-video__likes"> {currentVideo.likes} </p>
-                        
-                    </div>
-                    <div className="current-video__views-container">
-                        <img src={viewsIcon}/>
-                        <p className="current-video__views"> {currentVideo.views} </p>
-                    </div>
+                    {/* <div className='current-video__flex2-icons'> */}
+                        <div className="current-video__views-container">
+                            <img src={viewsIcon}/>
+                            <p className="current-video__views"> {currentVideo.views} </p>
+                        </div>
+                        <div className="current-video__likes-container">
+                            <img src={likesIcon}/>
+                            <p className="current-video__likes"> {currentVideo.likes} </p>
+                            
+                        </div>
+                    {/* </div> */}
+
                 
                 </div>
 
             </div>
 
-            <p> {currentVideo.description} </p>
-            <p> Number of comments: {currentVideo.comments.length} </p>
+            <p className="current-video__description"> {currentVideo.description} </p>
+            <p className="current-cideo__comment-number"> {currentVideo.comments.length} comments </p>
 
             
         </main>

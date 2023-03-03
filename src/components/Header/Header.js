@@ -9,7 +9,7 @@ import avatar from '../../assets/Images/Mohan-muruge.jpg';
 
 
 // delete props later
-const Header = (props) => {
+const Header = () => {
 
     // function props test
     // const handleClick = () => {
@@ -21,7 +21,7 @@ const Header = (props) => {
 
     return ( 
         <>
-            <h1> Prop test: {props.name.firstName} </h1>
+            {/* <h1> Prop test: {props.name.firstName} </h1> */}
             <header className="header">
                 <div className="header__logo-container">
                     <a className='header__logo-link' href=""> 

@@ -1,13 +1,15 @@
-@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
 @use './styles/partials/mixins' as *;
 
 
 
 * {
-    font-family: "avenir";
+    font-family: "avenir", "italic";
   }
 
+
 .app__contant {
+
     padding: 0rem 1rem;
     // width: 100%;
     @include tablet {
@@ -16,6 +18,7 @@
 
     @include desktop {
         padding: 0rem 8rem;
+        // border-left: $mercury;
     }
 }
 
@@ -36,14 +39,24 @@
 
     &-right {
         @include desktop {
-            width: 33%;
+            // width: 33%;
+            border-left: $mercury;
+            // flex: 4;
+            // padding: 0rem 1rem;
         }
     }
 
     &-left {
         @include desktop {
-            width: 67%;
+            width: 90%;
+            // flex: 6;
+            // flex: 1;
         }
+
+ 
     }
 
 }
+
+
+

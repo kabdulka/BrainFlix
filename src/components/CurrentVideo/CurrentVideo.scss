@@ -1,2 +1,26 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+
+
+
+.selected-Video {
+    border: red solid;
+    max-width: 100%;
+    
+    // padding: 0rem 5rem;
+    // background-image: ;
+
+
+    // &__current-video {
+    //     object-fit: cover;
+    //     border: blue solid;
+    // }
+}
+
+.selected-video__current-video {
+    border: blue solid;
+    // object-fit: cover;
+    width: 100%;
+   
+}

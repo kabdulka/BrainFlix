@@ -3,7 +3,7 @@ import "../VideoList/VideoList";
 import { useState } from "react";
 
 // const Video = (props) => {
-function Video({ image, title, channel, id, videoObj, handleVideoChange, handleCommentChange }) {
+function Video({ id, videoObj, handleVideoChange, handleCommentChange }) {
   // const [currentVid, setCurrentVid] = useState[0];
 
 
