@@ -3,22 +3,16 @@
 
 
     .comment__item {
-        // display: flex;
-
-        // border-top: $mercury 1px solid;
-        // gap: 0.75rem;
-        // padding-top: 1rem;
-        // padding-bottom: 1rem;
 
         display: flex;
         border-bottom: $mercury 1px solid;
         gap: 0.75rem;
-        /* padding-top: 1rem; */
         padding-bottom: 0.5rem;
 
         @include tablet {
             // padding-top: 1.5rem;
             // padding-bottom: 1.5rem;
+            gap: 1.5rem;
         }
 
         @include desktop {
@@ -27,10 +21,6 @@
             gap: 2rem;
         }
     }
-
-    // .comment__value {
-    //     width: 30%;
-    // }
 
     .comment__image {
         background-color: $mercury;

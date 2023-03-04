@@ -4,7 +4,7 @@ import '../CommentList/CommentList.scss';
 
 const CommentList = ({comments}) => {
 
-    // console.log("inside comments lis;lj;lkj;ljk;lkjt");
+    // console.log("inside comments");
     // console.log(comments[0][0])
     return ( 
         <>

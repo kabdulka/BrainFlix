@@ -5,22 +5,40 @@
 
 
 .selected-Video {
-    border: red solid;
+    // border: red solid;
     max-width: 100%;
-    
-    // padding: 0rem 5rem;
-    // background-image: ;
+    background-color: $brainFlix-DarkBlack;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    max-height: 20rem;
 
+    @include tablet {
+        // margin-top: 2rem;
+        max-height: 30rem;
+        padding: 0rem 2rem;
+    }
 
-    // &__current-video {
-    //     object-fit: cover;
-    //     border: blue solid;
-    // }
+    @include desktop {
+        // margin-top: 0rem;
+        max-height: 40rem;
+        padding: 0rem 13.5rem;
+    }
 }
 
 .selected-video__current-video {
-    border: blue solid;
-    // object-fit: cover;
+
+    object-fit: cover;
     width: 100%;
+    aspect-ratio: 16/9;
+
+    @include tablet {
+        max-width: 50rem;
+    }
+
+    @include desktop {
+
+        max-width: 80rem;
+    }
    
 }

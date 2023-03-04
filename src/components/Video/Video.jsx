@@ -32,7 +32,7 @@ function Video({ id, videoObj, handleVideoChange, handleCommentChange }) {
       {/* add an onclick on the li element */}
       <li onClick={handleVideoClick} className="videos__item">
         <div className="videos__image-container">
-            <img className="videos__image" src={videoObj.image} />
+            <img className="videos__image" src={videoObj.image} alt={videoObj.title} />
         </div>
         <div className="videos__content">
             <h3 className="videos__content-title">  {videoObj.title} </h3>

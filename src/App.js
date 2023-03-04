@@ -14,10 +14,10 @@ import CommentList from './components/CommentList/CommentList.jsx';
 
 function App() {
 
-  const obj = {firstName: "kenan"};
+
 
   const videosData = jsonData;
-  console.log(videosData[0]);
+
 
   // comments change
   // likes, views, title, date, channel and description
@@ -43,21 +43,25 @@ function App() {
   //comments={currentComment}
   return (
     <>
-    <div className="app__contant">
-      <Header/>
+    {/* <div className="app__contant"> */}
+      <div className="app__contant">
+        <Header/>
+      </div>
       <CurrentVideo id={currentId} currentVideo={currentVideo}/>
-      <div className="main__content">
-        <div className="main__content-left">
-          
-          <MainContent currentVideo={currentVideo} />
-          <CommentsForm  />
-          <CommentList comments={currentComment}/>
-        </div>
-        <div className="main__content-right"v>
-          <VideoList videos={videosData.filter(e => e.id !== currentVideo.id)} handleVideoChange={handleVideoChange} handleCommentChange={handleCommentChange} />
+      <div className="app__contant">
+        <div className="main__content">
+          <div className="main__content-left">
+            
+            <MainContent currentVideo={currentVideo} />
+            <CommentsForm  />
+            <CommentList comments={currentComment}/>
+          </div>
+          <div className="main__content-right"v>
+            <VideoList videos={videosData.filter(e => e.id !== currentVideo.id)} handleVideoChange={handleVideoChange} handleCommentChange={handleCommentChange} />
+          </div>
         </div>
       </div>
-    </div>
+    {/* </div> */}
     </>
   );
 }

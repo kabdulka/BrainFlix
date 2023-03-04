@@ -17,22 +17,24 @@ body {
 }
 
 .header {
-
+    
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
+    // margin-bottom: 1rem;
     // flex-wrap: wrap;
     // padding: 1rem;
 
     @include tablet {
-        padding: 1rem 2rem;
+        // padding: 1rem 0rem;
         flex-direction: row;
         // gap: 6rem;
-        align-items: baseline;
+        align-items: center;
         justify-content: space-between;
     }
 
     @include desktop {
-        padding: 1rem 0rem;
+        // padding: 1rem 0rem;
     }
 
     &__search {
@@ -43,7 +45,7 @@ body {
     // TODO style this so it drops a bit lower to align with the rest of
     // the container
     &__logo-container {
-        border: red solid;
+        // border: red solid;
         text-align: center;
 
         @include tablet {
@@ -59,7 +61,7 @@ body {
     }
 
     &__content {
-        border: blue solid;
+        // border: blue solid;
         margin-top: 1rem;
         display: flex;
         flex-wrap: wrap;
@@ -82,7 +84,7 @@ body {
 
     &__search-container {
         
-        border: red solid;
+        // border: red solid;
         display: flex;
         width: 100%;
         gap: 1rem;

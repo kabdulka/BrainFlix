@@ -29,7 +29,7 @@ const Comment = ({currentComment}) => {
         <>
             <li className="comment__item">
                 <div className="comment__image-container">
-                    <img className="comment__image" src="" alt=""/>
+                    <img className="comment__image" src="" alt=""  />
                 </div>
                 <div className="comment__info">
                     <div className="comment__info__row-1">

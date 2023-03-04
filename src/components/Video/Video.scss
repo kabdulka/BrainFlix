@@ -7,7 +7,7 @@
 .videos__item {
     width: 100%;
     height: 4rem;
-    border: green solid;
+    // border: green solid;
     display: flex;
     gap: 1rem;
     cursor: pointer;
@@ -27,16 +27,10 @@
 
 
 .videos__content {
-    // border: purple solid;
-    // height: 100%;
-    // flex: 1;
-    // display: flex;
-    // flex-direction: column;
-    // align-content: center;
-    // gap: 1rem;
+
     display: flex;
     flex-direction: column;
-    border: purple solid;
+    // border: purple solid;
     height: 100%;
     justify-content: space-around;
     /* gap: 1rem; */
@@ -48,9 +42,19 @@
 .videos__image-container {
     // height: 3.75rem;
     height: 100%;
-    width: 6.5rem;
+
+    width: 6rem;
+
+    @include tablet {
+        width: 7rem;
+    }
+
+    @include desktop {
+        width: 6.75rem;
+    }
+
     // width: 100%;
-    border: red solid;
+    // border: red solid;
     // object-fit: cover;
     
 }

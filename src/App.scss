@@ -4,7 +4,7 @@
 
 
 * {
-    font-family: "avenir", "italic";
+    font-family: "avenir";
   }
 
 
@@ -28,29 +28,25 @@
     width: 100%;
 
     @include tablet {
-        // padding: 0rem 2rem;
        
     }
 
     @include desktop {
-        // width: 66%;
         display: flex;
     }
 
     &-right {
         @include desktop {
-            // width: 33%;
-            border-left: $mercury;
-            // flex: 4;
-            // padding: 0rem 1rem;
+            // border-left: $mercury solid;
+
         }
     }
 
     &-left {
         @include desktop {
             width: 90%;
-            // flex: 6;
-            // flex: 1;
+
+            border-right: $mercury solid;
         }
 
  

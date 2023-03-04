@@ -63,7 +63,7 @@ const MainContent = ({currentVideo}) => {
             </div>
 
             <p className="current-video__description"> {currentVideo.description} </p>
-            <p className="current-cideo__comment-number"> {currentVideo.comments.length} comments </p>
+            <p className="current-video__comment-number"> {currentVideo.comments.length} comments </p>
 
             
         </main>

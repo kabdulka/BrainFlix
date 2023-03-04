@@ -164,7 +164,7 @@
             border: 0.0625rem solid $mercury;
             background-color: $albaster;
             resize: none;
-            font-family: 'AvenirNext LT Pro';
+            font-family: 'avenir';
             // review box-sizing
             box-sizing: border-box;
             height: 2.5rem;
@@ -175,7 +175,7 @@
             &::placeholder {
                 color: black;
                 font-size: 0.85rem;
-                font-family: 'AvenirNext LT Pro';
+                font-family: 'avenir';
             }
     
             &:focus {
