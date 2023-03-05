@@ -11,14 +11,12 @@
 .app__contant {
 
     padding: 0rem 1rem;
-    // width: 100%;
     @include tablet {
         padding: 0rem 2rem
     }
 
     @include desktop {
         padding: 0rem 8rem;
-        // border-left: $mercury;
     }
 }
 
@@ -36,17 +34,27 @@
     }
 
     &-right {
-        @include desktop {
-            // border-left: $mercury solid;
 
+        @include tablet {
+            padding-bottom: 2rem;
+        }
+
+        @include desktop {
+            padding-bottom: 4rem;
         }
     }
 
     &-left {
+
+        @include tablet {
+            padding-bottom: 2rem;
+        }
+
         @include desktop {
             width: 90%;
 
             border-right: $mercury solid;
+            padding-bottom: 4rem;
         }
 
  

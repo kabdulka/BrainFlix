@@ -30,17 +30,13 @@
 
     display: flex;
     flex-direction: column;
-    // border: purple solid;
     height: 100%;
     justify-content: space-around;
-    /* gap: 1rem; */
-    // flex: 1;
     width: 11rem;
 
 }
 
 .videos__image-container {
-    // height: 3.75rem;
     height: 100%;
 
     width: 6rem;
@@ -53,10 +49,7 @@
         width: 6.75rem;
     }
 
-    // width: 100%;
-    // border: red solid;
-    // object-fit: cover;
-    
+
 }
 
 .videos__image {
@@ -65,8 +58,6 @@
     border-radius: 0.25rem;
     background-color: $mercury;
     object-fit: cover;
-    // object-position: 0%
-    // padding-inline-start: 0px;
-    // margin-left: 0%;
+
 
 }

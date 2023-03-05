@@ -25,7 +25,6 @@ const Comment = ({currentComment}) => {
     } // end getFormatedDate function
 
     return ( 
-        // <p> comment </p>
         <>
             <li className="comment__item">
                 <div className="comment__image-container">
@@ -42,12 +41,7 @@ const Comment = ({currentComment}) => {
                         </p>
                     </div>
 
-                    {/* <div className="comment__edit">
-                        
-                        <img className="comment__delete" src="./assets/Icons/SVG/icon-delete.svg" alt="delete comment" />
-                        <img className="comment__like" src="./assets/Icons/SVG/icon-like.svg" alt="like comment">
-
-                    </div> */}
+     
                 </div>
             </li> 
         </>

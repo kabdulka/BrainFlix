@@ -3,7 +3,6 @@
 
 
 .form {
-    // padding: 0rem 1rem 0rem 1rem;
 
     @include tablet {
         margin-top: 2rem;
@@ -19,12 +18,10 @@
         margin-top: 1rem;
 
         @include tablet {
-            // font-size: 2.32rem;
-            // padding: 0rem 1rem;
+     
         }
 
         @include desktop {
-            // padding: 1rem 7rem 0rem 7rem;
 
         }
     }
@@ -33,12 +30,10 @@
 
         @include tablet {
             margin-top: 2.5rem;
-            // padding: 0rem 5rem;
 
         }
 
         @include desktop {
-            // padding: 0rem 23.5rem;
         }
     }
 
@@ -55,11 +50,13 @@
         }
 
         @include desktop {
-            // display: flex;
             align-items: center;
+            // padding-bottom: 2rem;
             padding-right: 1.5rem;
             padding-left: 1.25rem;
             gap: 2rem;
+            border-bottom: none;
+
         }
 
     }
@@ -71,8 +68,7 @@
         gap: 1.25rem;
 
         @include tablet {
-            // min-height: 40px;
-            // height: 4rem;
+
             flex-direction: row;
             align-items: flex-end;
         }
@@ -88,15 +84,24 @@
         }
 
         &-btn {
+            background-image: url('../../assets/Icons/add_comment.svg');
+            background-repeat: no-repeat;
+            background-position: 0.5rem;
+            background-size: 1.125rem;
             background-color: $brainFlix-blue;
             border: none;
             color: $white;
-            padding: 0.5rem 2rem;
+            padding: 0.25rem 2rem;
             height: 2.5rem;
-            border-radius: 4px;
-            font-size: 0.875rem;
+            border-radius: 0.25rem;
             width: 100%;
+            font-weight: 600;
+            font-size: 0.5rem;
             cursor: pointer;
+
+            &:hover {
+                background-color: $brainFlix-DarkBlue;
+            }
     
             @include tablet {
 
@@ -220,11 +225,6 @@
     object-fit: cover;
     object-position: 30% 60%;
     border-radius: 50%;
-
-    // @include tablet {
-    //     width: 2.5rem;
-    //     height: 2.5rem;
-    // }
 
     &--form {
         margin-top: 1.25rem;

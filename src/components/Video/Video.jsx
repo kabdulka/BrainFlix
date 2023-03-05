@@ -1,35 +1,21 @@
+import { useState } from "react";
 import "./Video.scss";
 import "../VideoList/VideoList";
-import { useState } from "react";
 
-// const Video = (props) => {
-function Video({ id, videoObj, handleVideoChange, handleCommentChange }) {
-  // const [currentVid, setCurrentVid] = useState[0];
+
+function Video({videoObj, handleVideoChange, handleCommentChange }) {
 
 
 
   const handleVideoClick = () => {
-    console.log("Id of video clicked");
-    console.log(id);
+
     handleVideoChange(videoObj);
     handleCommentChange(videoObj.comments)
   }  
 
-
-//   function Child(props) {
-//     function handleChange(event) {
-//         // Here, we invoke the callback with the new value
-//         props.onChange(event.target.value);
-//     }
-  
-//     return <input value={props.value} onChange={handleChange} />
-// }
-  
-
   return (
     <>
-    {/* <p> {videoObj.title} </p> */}
-      {/* add an onclick on the li element */}
+
       <li onClick={handleVideoClick} className="videos__item">
         <div className="videos__image-container">
             <img className="videos__image" src={videoObj.image} alt={videoObj.title} />

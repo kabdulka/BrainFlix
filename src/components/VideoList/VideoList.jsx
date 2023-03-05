@@ -11,24 +11,18 @@ console.log(videosData);
 
 const VideoList = ({videos, handleVideoChange, handleCommentChange}) => {
 
-    // function handleVideoChange (newVideo) {
-    //     setCurrentVideo(newVideo);
-    //   }
-    
-    // const data = JSON.parse(videosData);
-   
-    // get the ID of the 
+
     console.log(videos);
     return (  
         <>
             <aside className='videos'>
                 <h2 className="videos__title"> Next Videos </h2>
                
-                {/* <VideoList /> */}
-                {/* getting data from App props */}
+     
                 <ul className='videos__list'>
                     {videos.map((video) => 
                         // Map returns new data use it instead of a for each loop
+                        // note the arrow
                         <Video  key={video.id} 
                                 id={video.id} 
                                 image={video.image} 

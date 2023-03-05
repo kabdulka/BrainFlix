@@ -2,11 +2,9 @@
 @use '../../styles/partials/mixins' as *;
 
 
-// TODO change this into a background image
 
 .current-video {
 
-    // padding: 1rem;
     width: 100%;
 
     @include tablet {
@@ -14,7 +12,6 @@
     }
 
     @include desktop {
-        // width: 66%;
     }
 
     &__title {
@@ -36,12 +33,10 @@
     }
 
     &__info {
-        // border: red solid;
         border-bottom: $mercury solid;
 
         display: flex;
-        // align-items:center;
-        // justify-content: baseline;
+        
         gap: 5rem;
         padding-bottom: 1rem;
 
@@ -71,7 +66,6 @@
     }
 
     &__comment-number {
-        // border: red solid;
         font-size: 0.85rem;
         font-weight: 700;
 
@@ -88,7 +82,6 @@
     }
 
     &__flex1 {
-        // border: red solid;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -101,7 +94,6 @@
     }
 
     &__flex2 {
-        // border: red solid;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -115,13 +107,10 @@
         &-icons {
             display: flex;
             gap: 1rem;
-            // padding-right: 1rem;
         }
     }
 
-    //TODO align channel with date
     &__channel {
-        // border: green solid;
         margin: 0;
         font-size: 0.85rem;
         font-weight: 700;
@@ -134,7 +123,6 @@
     }
 
     &__likes-container {
-        // border: red solid;
         display: flex;
         gap: 0.5rem;
 
@@ -152,7 +140,6 @@
     }
 
     &__views-container {
-        // border: red solid;
         display: flex;
         gap: 0.5rem;
     }
@@ -162,6 +149,5 @@
 .current-video__image {
     height: 10rem;
     width: 100%;
-    // border: red solid;
 }
 

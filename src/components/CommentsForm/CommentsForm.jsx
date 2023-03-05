@@ -9,8 +9,6 @@ const CommentInfo = ({comments}) => {
         <>
             <section className="form">
 
-                {/* <h1 className="form__title"> Join the Conversation  </h1> */}
-
                 <div className="form__container">
 
                     <div className="form__wrapper">
@@ -21,10 +19,6 @@ const CommentInfo = ({comments}) => {
 
                         <form className="form__comment">
 
-                            {/* <div className="form__info-container">
-                                <label className="form__comment-label  form__comment__name--label" htmlFor="name"> NAME </label>
-                                <input className="form__comment-name  form__comment__name--value" type="text" id="name" name="name" placeholder="Enter your name" />
-                            </div> */}
 
                             <div className="form__info-container">
                                 <label className="form__comment-label form__comment-text--label" htmlFor="comment"> JOIN THE CONVERSATION </label>
