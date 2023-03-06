@@ -7,10 +7,32 @@ import jsonData from './Data/video-details.json';
 import CurrentVideo from './components/CurrentVideo/CurrentVideo';
 import './components/VideoList/VideoList';
 import VideoList from './components/VideoList/VideoList';
-
 import MainContent from './components/MainContent/MainContent';
 import CommentsForm from './components/CommentsForm/CommentsForm.jsx';
 import CommentList from './components/CommentList/CommentList.jsx';
+
+
+export function getFormattedDate (timeStamp) {
+  const postedDate = new Date(timeStamp);
+  postedDate.toLocaleDateString('en-US');
+   
+  let day = postedDate.getDate() + "";
+  let month = postedDate.getMonth() + "";
+  let year = postedDate.getFullYear() + "";
+  let hoursInSeconds = postedDate.getHours()*3600;
+  let minutesInSeconds = postedDate.getMinutes()*60;
+  let seconds = postedDate.getSeconds();
+  let totalTimeInSec = hoursInSeconds + minutesInSeconds + seconds;
+
+  if (postedDate.getMonth()/10 < 1 ) {
+      month++;
+      month = "0" + month;
+  }
+  if (postedDate.getDate()/10 < 1 ) {
+      day = "0" + day;
+  }
+  return `${month}/${day}/${year}`;
+} // end getFormatedDate function
 
 function App() {
 

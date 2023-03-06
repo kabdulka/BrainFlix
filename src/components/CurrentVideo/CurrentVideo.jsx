@@ -1,11 +1,8 @@
 
 
 
-import axios from 'axios';
+
 import "./CurrentVideo.scss";
-
-
-
 
 
 const CurrentVideo = ({currentVideo}) => {

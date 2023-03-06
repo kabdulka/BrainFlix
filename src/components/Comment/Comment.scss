@@ -24,11 +24,11 @@
         }
     }
 
-    .comment__image {
+    .comment__image-container {
         background-color: $mercury;
         height: 2.25rem;
         width: 2.25rem;
-        
+        // border: red solid;
         object-fit: cover;
         object-position: 30% 60%;
         border-radius: 50%;
@@ -40,6 +40,8 @@
             max-height: 2.5rem;
             max-width: 2.5rem;
         }
+
+ 
     }
 
     .comment__info {
