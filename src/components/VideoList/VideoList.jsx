@@ -1,18 +1,12 @@
 import videosData from '../../Data/video-details.json';
-// import './currentVideo/currentVideo.jsx';
-// import '../CurrentVideo/CurrentVideo';
+
 import Video from '../Video/Video';
-// import Video from '../CurrentVideo/CurrentVideo.jsx';
-// import CurrentVideo from '../CurrentVideo/CurrentVideo.jsx';
+
 import '../VideoList/VideoList.scss';
 
-// const data = videosData;
-console.log(videosData);
 
 const VideoList = ({videos, handleVideoChange, handleCommentChange}) => {
 
-
-    console.log(videos);
     return (  
         <>
             <aside className='videos'>

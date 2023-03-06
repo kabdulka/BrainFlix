@@ -3,8 +3,7 @@ import avatar from '../../assets/Images/Mohan-muruge.jpg';
 
 const CommentInfo = ({comments}) => {
     
-    console.log("Inside comments section ");
-    console.log(comments);
+
     return ( 
         <>
             <section className="form">

@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import logo from './logo.svg';
+import axios from "axios";
 import Header from "./components/Header/Header";
 import './App.scss';
 import jsonData from './Data/video-details.json';
@@ -13,6 +14,7 @@ import CommentList from './components/CommentList/CommentList.jsx';
 
 
 export function getFormattedDate (timeStamp) {
+
   const postedDate = new Date(timeStamp);
   postedDate.toLocaleDateString('en-US');
    
@@ -35,6 +37,30 @@ export function getFormattedDate (timeStamp) {
 } // end getFormatedDate function
 
 function App() {
+
+  const apiKey = `789bb1ed-ef63-4f3c-a3fc-e83987bf2396`;
+  let request = `videos`
+  const videosUrl = `https://project-2-api.herokuapp.com/${request}/?api_key=${apiKey}`;
+  const [videosList, setVideosList] = useState();
+
+  // get the data using an axios call
+  const getVideos = () => {
+
+		axios
+			.get(videosUrl)
+			.then((response) => {
+				// setMemeList(response.data.data.memes.slice(0,26))
+        setVideosList(response.data);
+        console.log("Inside axios call")
+        console.log(response.data);
+			}).catch ((err) => {
+				console.log(`Videos API error :`, err)
+			})
+	}
+	getVideos()
+
+  console.log("Testing state variable ");
+  console.log(videosList);
 
   const videosData = jsonData;
 
