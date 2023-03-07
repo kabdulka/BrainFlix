@@ -2,6 +2,7 @@
 import "./Header.scss";
 import logo from '../../assets/Logo/BrainFlix-logo.svg';
 import avatar from '../../assets/Images/Mohan-muruge.jpg';
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -11,15 +12,23 @@ const Header = () => {
         <>
             <header className="header">
                 <div className="header__logo-container">
-                    <a className='header__logo-link' href=""> 
+
+                    {/* <a className='header__logo-link' href=""> 
                         <img className="header__logo-image" src={logo} alt="brainflix-logo"/> 
-                    </a>
+                    </a> */}
+
+                    <Link className='header__logo-link' to="/">
+                        <img className="header__logo-image" src={logo} alt="brainflix-logo"/> 
+                    </Link>
 
                 </div>
                 <div className="header__content">
                     <input className="header__search-input" type="text" id="search" name="search" placeholder="Search"/>
                     <img src={avatar} className="header__avatar" />
                     <button className="header__upload"> UPLOAD </button>
+                    <Link className="header__upload" to="/upload">
+                        <button > UPLOAD </button>
+                    </Link>
                 </div>
 
 
