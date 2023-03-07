@@ -1,10 +1,10 @@
-import jsonData from '../../Data/video-details.json';
+// import jsonData from '../../Data/video-details.json';
 import Comment from '../Comment/Comment';
 import '../CommentList/CommentList.scss';
 
-const CommentList = ({comments}) => {
+const CommentList = ({currentVideo}) => {
 
-
+    const comments = currentVideo.comments;
     return ( 
         <>
      
