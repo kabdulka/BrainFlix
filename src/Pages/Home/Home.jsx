@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-// import Header from "../../components/Header/Header";
 
-// import jsonData from '../../Data/video-details.json'
 import CurrentVideo from "../../components/CurrentVideo/CurrentVideo";
 import VideoList from '../../components/VideoList/VideoList'
 import MainContent from "../../components/MainContent/MainContent";
@@ -25,12 +23,10 @@ const Home = () => {
 
     const [videosList, setVideosList] = useState([]);
 
-    // Current video object
 
     // Initialize the current video to be the first video object in the json array of objects
     const [currentVideo, setCurrentVideo] = useState(null);
-    // const [currentComment, setCurrentComment] = useState(comments);
-    // Use a callback to handle the change in currentId using setCurrentId
+   
     const {videoId} = useParams()
 
 
@@ -38,7 +34,6 @@ const Home = () => {
 
     function getVideos () {
 
-        // React.useEffect (() => {
         axios
             .get(videosUrl)
             .then((response) => {
@@ -81,15 +76,7 @@ const Home = () => {
 
     // on page mount []
   // fires the useEffect once
-//   useEffect(() => {
-//     if(videoId) {
-//         console.log("test")
-//       getCurrentVideo(videoId);
-//     } else {
-//       getCurrentVideo('84e96018-4022-434e-80bf-000ce4cd12b8');
-//     }
-//     // videoId is a dependency which means that the use effect will run the code when the videoId variable has changed
-//   }, [videoId]) 
+ 
 
 
   // empy square brackets [] means on page mount
