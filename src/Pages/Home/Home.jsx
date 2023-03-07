@@ -25,7 +25,7 @@ const Home = () => {
 
 
     // Initialize the current video to be the first video object in the json array of objects
-    const [currentVideo, setCurrentVideo] = useState(null);
+    const [currentVideo, setCurrentVideo] = useState({});
    
     const {videoId} = useParams()
 
@@ -37,22 +37,20 @@ const Home = () => {
         axios
             .get(videosUrl)
             .then((response) => {
-               // console.log("Inside axios call")
-                //console.log(response.data);
+  
                 setVideosList(response.data);
             }).then(response => {
-            // console.log(response.data)
-            // setVideosList(response.data);
+
         })
         .catch ((err) => {
             console.log(`Videos API error :`, err)
         })
-        // }, ([]))
+
 
 	}// end getVideos function
 
-  // on page mount []
-  // fires the useEffect once
+  // on page mount [] empty dependency runs once. good for API calls
+  // fires the side effect of useEffect after every render when there is no second argument
   useEffect(() => {
    // console.log("inside Use effect")
     getVideos();
@@ -88,14 +86,14 @@ const Home = () => {
     }
     // videoId is a dependency which means that the use effect will run the code when the videoId variable has changed
 
-  }, [videoId])
+  }, [videoId, videosList])
 	
   function handleVideoChange (newVideo) {
     setCurrentVideo(newVideo);
   }
 
     return ( 
-        currentVideo && videosList ? 
+        // currentVideo && videosList ? 
         <>
           <CurrentVideo  currentVideo={currentVideo}/>
           <div className="app__contant">
@@ -111,7 +109,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </> : null
+        </> 
+        // : null
 
      );
 }

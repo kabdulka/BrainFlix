@@ -13,9 +13,6 @@ const Header = () => {
             <header className="header">
                 <div className="header__logo-container">
 
-                    {/* <a className='header__logo-link' href=""> 
-                        <img className="header__logo-image" src={logo} alt="brainflix-logo"/> 
-                    </a> */}
 
                     <Link className='header__logo-link' to="/">
                         <img className="header__logo-image" src={logo} alt="brainflix-logo"/> 
@@ -25,9 +22,10 @@ const Header = () => {
                 <div className="header__content">
                     <input className="header__search-input" type="text" id="search" name="search" placeholder="Search"/>
                     <img src={avatar} className="header__avatar" />
-                    <button className="header__upload"> UPLOAD </button>
+                    {/* <button className="header__upload"> UPLOAD </button> */}
                     <Link className="header__upload" to="/upload">
-                        <button > UPLOAD </button>
+                        {/* <button > UPLOAD </button> */}
+                        UPLOAD
                     </Link>
                 </div>
 

@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     margin-top: 1rem;
 
+    padding-bottom: 1rem;
 
     @include tablet {
         flex-direction: row;
@@ -21,9 +22,8 @@ body {
     }
 
     @include desktop {
+
     }
-
-
 
     &__logo-container {
         text-align: center;
@@ -106,6 +106,8 @@ body {
     }
 
     &__upload {
+        text-decoration: none;
+        text-align: center;
         background-image: url('../../assets/Icons/upload.svg');
         background-repeat: no-repeat;
         background-position: 0.5rem;
@@ -120,7 +122,7 @@ body {
 
         @include tablet {
             order: 2;
-            padding: 0.75rem 3rem;
+            // padding: 0.75rem 3rem;
         }
 
         @include tablet {

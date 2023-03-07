@@ -12,7 +12,7 @@ const CommentList = ({currentVideo}) => {
 
             <ul className='comments__list'>
 
-                {comments.map((comment) => 
+                {comments?.map((comment) => 
  
                     // Map returns new data use it instead of a for each loop
                     <Comment  
