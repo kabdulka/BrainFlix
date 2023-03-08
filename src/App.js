@@ -33,7 +33,6 @@ export function getFormattedDate (timeStamp) {
 
 function App() {
 
-  
   return (
     <>  
           <BrowserRouter>

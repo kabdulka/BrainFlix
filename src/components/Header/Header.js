@@ -5,6 +5,7 @@ import avatar from '../../assets/Images/Mohan-muruge.jpg';
 import { Link } from "react-router-dom";
 
 
+
 const Header = () => {
 
 
@@ -13,12 +14,13 @@ const Header = () => {
             <header className="header">
                 <div className="header__logo-container">
 
-
+                    
                     <Link className='header__logo-link' to="/">
                         <img className="header__logo-image" src={logo} alt="brainflix-logo"/> 
                     </Link>
 
                 </div>
+
                 <div className="header__content">
                     <input className="header__search-input" type="text" id="search" name="search" placeholder="Search"/>
                     <img src={avatar} className="header__avatar" />
@@ -27,6 +29,7 @@ const Header = () => {
                         {/* <button > UPLOAD </button> */}
                         UPLOAD
                     </Link>
+
                 </div>
 
 

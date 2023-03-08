@@ -13,13 +13,14 @@ import CommentsForm from "../../components/CommentsForm/CommentsForm"
 
 const Home = () => {
 
+    
+
     const apiKey = `789bb1ed-ef63-4f3c-a3fc-e83987bf2396`;
     let request = `videos`
     const videosUrl = `https://project-2-api.herokuapp.com/${request}/?api_key=${apiKey}`;
 
     // const videosData = jsonData;
     // let comments = videosData[0].comments;
-
 
     const [videosList, setVideosList] = useState([]);
 
@@ -93,7 +94,7 @@ const Home = () => {
   }
 
     return ( 
-        // currentVideo && videosList ? 
+        currentVideo && videosList ? 
         <>
           <CurrentVideo  currentVideo={currentVideo}/>
           <div className="app__contant">
@@ -110,7 +111,7 @@ const Home = () => {
             </div>
           </div>
         </> 
-        // : null
+        : null
 
      );
 }
