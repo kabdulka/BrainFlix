@@ -13,8 +13,6 @@ import CommentsForm from "../../components/CommentsForm/CommentsForm"
 
 const Home = () => {
 
-    
-
     const apiKey = `789bb1ed-ef63-4f3c-a3fc-e83987bf2396`;
     let request = `videos`
     const videosUrl = `https://project-2-api.herokuapp.com/${request}/?api_key=${apiKey}`;
@@ -26,12 +24,15 @@ const Home = () => {
 
 
     // Initialize the current video to be the first video object in the json array of objects
-    const [currentVideo, setCurrentVideo] = useState({});
+    const [currentVideo, setCurrentVideo] = useState(null);
    
     const {videoId} = useParams()
 
-
     console.log(videoId)
+
+    function getRandomVid (vidListLen) {
+        return Math.floor((Math.random() * vidListLen));
+    }
 
     function getVideos () {
 
@@ -40,6 +41,8 @@ const Home = () => {
             .then((response) => {
   
                 setVideosList(response.data);
+                // let x = getRandomVid(response.data.length);
+                // console.log(`The random number is: ${x}`);
             }).then(response => {
 
         })
@@ -50,44 +53,62 @@ const Home = () => {
 
 	}// end getVideos function
 
-  // on page mount [] empty dependency runs once. good for API calls
-  // fires the side effect of useEffect after every render when there is no second argument
-  useEffect(() => {
-   // console.log("inside Use effect")
-    getVideos();
-  }, [])
+    // on page mount [] empty dependency runs once. good for API calls
+    // fires the side effect of useEffect after every render when there is no second argument
+    useEffect(() => {
+        getVideos();
+    }, [])
 
-  // getVideos();
-
-  // let currentVid = videosList[0];
-  // console.log(currentVid);
-
-
-  function getCurrentVideo(id) {
-    axios
-    .get(`https://project-2-api.herokuapp.com/${request}/${id}/?api_key=${apiKey}`)
-    .then( (response) => {
-      setCurrentVideo(response.data)
-    }).catch ( (err) => {
-      console.log(`Videos API error :` , err);
-    })
-  }
+    function getCurrentVideo(id) {
+        axios
+        .get(`https://project-2-api.herokuapp.com/${request}/${id}/?api_key=${apiKey}`)
+        .then( (response) => {
+        setCurrentVideo(response.data)
+        }).catch ( (err) => {
+        console.log(`Videos API error :` , err);
+        })
+    }
 
     // on page mount []
   // fires the useEffect once
  
-
 
   // empy square brackets [] means on page mount
   useEffect(() => {
     if (videoId) {
         getCurrentVideo(videoId);
     } else {
-        getCurrentVideo('84e96018-4022-434e-80bf-000ce4cd12b8')
+        // getCurrentVideo('84e96018-4022-434e-80bf-000ce4cd12b8')
+        let ranNum = getRandomVid(videosList.length)
+        console.log(`Inside use effect random number `);
+        console.log(ranNum);
+        getCurrentVideo(videosList[ranNum]?.id)
     }
     // videoId is a dependency which means that the use effect will run the code when the videoId variable has changed
 
   }, [videoId, videosList])
+
+//   function postComment () {
+
+//   }
+
+  const postComment = (newComment) => {
+    // POST /videos/:id/comments
+    const postCommentUrl = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments/?api_key=${apiKey}`;
+    // const comment = {
+    //     name : "Anonymous",
+    //     comment : "something"
+    // }
+    axios
+        .post(postCommentUrl, newComment )
+        .then( (response) => {
+            setCurrentVideo(getCurrentVideo(videoId));
+        })
+        .catch((err) => {
+            console.log("Comment post error", err);
+        });
+
+  }
 	
   function handleVideoChange (newVideo) {
     setCurrentVideo(newVideo);
@@ -102,7 +123,7 @@ const Home = () => {
               <div className="main__content-left">
                 
                 <MainContent currentVideo={currentVideo} />
-                <CommentsForm  />
+                <CommentsForm postComment={postComment} />
                 <CommentList currentVideo={currentVideo}/>
               </div>
               <div className="main__content-right">

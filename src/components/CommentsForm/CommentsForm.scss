@@ -106,12 +106,11 @@
 
                 width: 9.75rem;
                 font-size: 1rem;
-
-  
             }
 
             @include desktop {
                 width: 9.4rem;
+                font-size: 0.75rem;
             }
         }
 
