@@ -5,7 +5,7 @@ import "../VideoList/VideoList";
 import { Link} from "react-router-dom";
 
 
-function Video({videosList, videoObj, handleVideoChange }) {
+function Video({videoObj }) {
 
   // console.log(videoObj.id)
   // console.log(videosList);

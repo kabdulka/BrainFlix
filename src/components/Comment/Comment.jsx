@@ -2,7 +2,17 @@ import '../Comment/Comment.scss';
 import { getFormattedDate } from '../../App';
 
 
-const Comment = ({currentComment}) => {
+const Comment = ({currentComment, deleteComment}) => {
+
+    const handleClick = () => {
+        console.log(  currentComment.id)
+        console.log("click delete");
+        deleteComment(currentComment.id)
+    }
+
+    // function handleClick () {
+
+    // }
 
     return ( 
         <>
@@ -19,6 +29,11 @@ const Comment = ({currentComment}) => {
                         <p className="comment__value"> 
                             {currentComment.comment}
                         </p>
+                        {/* <div className="form__comment__btn-container"> */}
+                                <a onClick={(handleClick)} className="comment__delete"> DELETE </a>
+                                {/* <a onClick={() => {deleteComment(currentComment.id)}} className="comment__delete"> DELETE </a> */}
+
+                        {/* </div> */}
                     </div>
 
      

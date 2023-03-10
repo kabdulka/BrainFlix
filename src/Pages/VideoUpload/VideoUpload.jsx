@@ -2,10 +2,15 @@
 import '../VideoUpload/VideoUpload.scss';
 import Header from '../../components/Header/Header';
 import uploadThumbnail from '../../assets/Images/Upload-video-preview.jpg'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const VideoUpload = () => {
+
+    const handlePublishClick = () => {
+        console.log("cliock")
+        alert("You've successfully published your video")
+    }
 
     return (
         <>
@@ -35,13 +40,13 @@ const VideoUpload = () => {
 
                 <div className="form__section-update">
 
-                    <Link className="form__section-publish" to="/">
+                    <NavLink onClick={handlePublishClick} className="form__section-publish" to="/">
                         PUBLISH
-                    </Link>
+                    </NavLink>
 
-                    <button className="form__section-cancel"> 
+                    <Link to="/" className="form__section-cancel"> 
                         CANCEL
-                    </button>
+                    </Link>
 
                 </div>
 

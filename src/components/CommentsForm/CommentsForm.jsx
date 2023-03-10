@@ -1,36 +1,41 @@
 import './CommentsForm.scss';
 import avatar from '../../assets/Images/Mohan-muruge.jpg';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 // import axios from 'axios';
 
-const CommentsForm = ({postComment}) => {
+const CommentsForm = ({postComment, currentVideo}) => {
     
     // const newComment = {};
-    const [newComment, setNewComment] = useState()
+    const [newComment, setNewComment] = useState("")
+    const [textFieldError, setTextFieldError] = useState("");
 
     const handleSubmit = (event) => {
+
         event.preventDefault();
-         // newComment.comment = event.target.value;
-         console.log("submit")
-         console.log(newComment);
-        handleCommentChange(event)
-       
-        // console.log(comment)
+        if (newComment.length < 2) {
+            setTextFieldError("--error");
+        } else {
+            setTextFieldError("");
+            const newCommentObj = {
+                name: "Anonymous",
+                comment: newComment
+            };
+
+            postComment(newCommentObj)
+            setNewComment("");
+        }
 
     };
 
+    useEffect(() => {
+        setTextFieldError("");
+    }, [currentVideo])
+    
+
     const handleCommentChange = (event) => {
-        event.preventDefault();
-        const newComment = {
-            name: "Anonymous",
-            comment: event.target.value
-        };
-        // newComment.name = "Anonymous";
-        // newComment.comment = event.target.value;
-        console.log(newComment.comment)
-        setNewComment(newComment);
-        console.log(newComment);
-        postComment(newComment)
+
+        setNewComment(event.target.value);
+        
     };
 
 
@@ -51,8 +56,9 @@ const CommentsForm = ({postComment}) => {
 
                             <div className="form__info-container">
                                 <label className="form__comment-label form__comment-text--label" htmlFor="comment"> JOIN THE CONVERSATION </label>
-                                <textarea  value={newComment} className="form__comment-text form__comment-text--value" id="comment" name="comment" placeholder="Add a new comment" ></textarea>
+                                <textarea  value={newComment} onChange={handleCommentChange} className={`form__comment-text form__comment-text${textFieldError}`} id="comment" name="comment" placeholder="Add a new comment" ></textarea>
                             </div>
+                            {/* className="form__comment-text form__comment-text--value" */}
 
                             <div className="form__comment__btn-container">
                                 <button  type="submit" className="form__comment-btn"> COMMENT </button>

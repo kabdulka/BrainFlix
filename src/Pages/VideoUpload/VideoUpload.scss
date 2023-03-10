@@ -189,12 +189,14 @@
         // margin-top: 1rem;
 
         border: none;
+        text-decoration: none;
         background-color: $white;
         color: $brainFlix-blue;
         font-size: 0.75rem;
         font-weight: 700;
         cursor: pointer;
-
+        display: flex;
+        align-items: center;
         @include tablet {
             order: 1;
         }

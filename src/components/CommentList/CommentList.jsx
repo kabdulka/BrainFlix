@@ -2,12 +2,13 @@
 import Comment from '../Comment/Comment';
 import '../CommentList/CommentList.scss';
 
-const CommentList = ({currentVideo}) => {
+const CommentList = ({currentVideo, deleteComment}) => {
 
     const comments = currentVideo.comments;
     const videoId = currentVideo.id;
     // console.log(`The id of the current video is ${videoId}`);
     // console.log(`the Id of the comment is: ${comments[0].id}`)
+
 
 
     return ( 
@@ -21,7 +22,7 @@ const CommentList = ({currentVideo}) => {
  
                     // Map returns new data use it instead of a for each loop
                     <Comment  
-                           key={comment.id} currentComment={comment}/>
+                           key={comment.id} currentComment={comment} deleteComment={deleteComment}/>
                 
                            )}
             </ul>

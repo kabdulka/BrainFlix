@@ -77,12 +77,12 @@ const Home = () => {
   useEffect(() => {
     if (videoId) {
         getCurrentVideo(videoId);
-    } else {
+    } else if(videosList.length){
         // getCurrentVideo('84e96018-4022-434e-80bf-000ce4cd12b8')
         let ranNum = getRandomVid(videosList.length)
         console.log(`Inside use effect random number `);
         console.log(ranNum);
-        getCurrentVideo(videosList[ranNum]?.id)
+        getCurrentVideo(videosList[ranNum].id)
     }
     // videoId is a dependency which means that the use effect will run the code when the videoId variable has changed
 
@@ -94,7 +94,7 @@ const Home = () => {
 
   const postComment = (newComment) => {
     // POST /videos/:id/comments
-    const postCommentUrl = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments/?api_key=${apiKey}`;
+    const postCommentUrl = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments?api_key=${apiKey}`;
     // const comment = {
     //     name : "Anonymous",
     //     comment : "something"
@@ -102,12 +102,29 @@ const Home = () => {
     axios
         .post(postCommentUrl, newComment )
         .then( (response) => {
-            setCurrentVideo(getCurrentVideo(videoId));
+            getCurrentVideo(videoId);
         })
         .catch((err) => {
             console.log("Comment post error", err);
         });
 
+  }
+
+  const deleteComment = (commentId) => {
+    // DELETE /videos/:videoId/comments/:commentId
+    console.log("Current vid id is ", currentVideo.id)
+    console.log("Request is ", request)
+    console.log("Comment Id is: ", commentId)
+    const deleteComment = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments/${commentId}?api_key=${apiKey}`
+
+    axios
+        .delete(deleteComment)
+        .then((response ) => {
+            getCurrentVideo(videoId)
+        })
+        .catch( (err) => {
+            console.log("Comment post error", err);
+        });
   }
 	
   function handleVideoChange (newVideo) {
@@ -123,8 +140,8 @@ const Home = () => {
               <div className="main__content-left">
                 
                 <MainContent currentVideo={currentVideo} />
-                <CommentsForm postComment={postComment} />
-                <CommentList currentVideo={currentVideo}/>
+                <CommentsForm currentVideo={currentVideo} postComment={postComment} />
+                <CommentList deleteComment={deleteComment} currentVideo={currentVideo}/>
               </div>
               <div className="main__content-right">
                 <VideoList videos={videosList.filter(e => e.id !== currentVideo.id)} handleVideoChange={handleVideoChange} />
