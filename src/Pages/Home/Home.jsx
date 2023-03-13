@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -17,8 +16,6 @@ const Home = () => {
     let request = `videos`
     const videosUrl = `https://project-2-api.herokuapp.com/${request}/?api_key=${apiKey}`;
 
-    // const videosData = jsonData;
-    // let comments = videosData[0].comments;
 
     const [videosList, setVideosList] = useState([]);
 
@@ -41,8 +38,7 @@ const Home = () => {
             .then((response) => {
   
                 setVideosList(response.data);
-                // let x = getRandomVid(response.data.length);
-                // console.log(`The random number is: ${x}`);
+
             }).then(response => {
 
         })
@@ -68,12 +64,9 @@ const Home = () => {
         console.log(`Videos API error :` , err);
         })
     }
-
-    // on page mount []
-  // fires the useEffect once
  
 
-  // empy square brackets [] means on page mount
+  // empy square brackets [] means on page mount (page renders)
   useEffect(() => {
     if (videoId) {
         getCurrentVideo(videoId);
@@ -88,17 +81,11 @@ const Home = () => {
 
   }, [videoId, videosList])
 
-//   function postComment () {
 
-//   }
 
   const postComment = (newComment) => {
-    // POST /videos/:id/comments
     const postCommentUrl = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments?api_key=${apiKey}`;
-    // const comment = {
-    //     name : "Anonymous",
-    //     comment : "something"
-    // }
+
     axios
         .post(postCommentUrl, newComment )
         .then( (response) => {
@@ -111,7 +98,6 @@ const Home = () => {
   }
 
   const deleteComment = (commentId) => {
-    // DELETE /videos/:videoId/comments/:commentId
     console.log("Current vid id is ", currentVideo.id)
     console.log("Request is ", request)
     console.log("Comment Id is: ", commentId)
@@ -155,3 +141,5 @@ const Home = () => {
 }
  
 export default Home;
+
+

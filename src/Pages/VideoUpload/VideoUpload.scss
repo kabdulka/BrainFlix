@@ -6,7 +6,6 @@
 
 
 .form__section {
-    // border: red solid;
     border-top: 1px solid $mercury;
 
     padding: 1rem 1rem;
@@ -79,14 +78,12 @@
     }
 
     &-title-label {
-        // border: red solid;
         color: $silver;
         font-size: 0.75rem;
         font-weight: 700;
     }
 
     &-title {
-        // border: red solid;
         font-size: 1.45rem;
         font-weight: 600;
         margin-top: 0.5rem;
@@ -109,7 +106,6 @@
         box-sizing: border-box;
         padding: 0.5rem;
         background-color: $albaster;
-        // border: none;
         &::placeholder {
             color: $brainFlix-Black;
         }
@@ -120,7 +116,6 @@
     }
     
     &-description-label {
-        // border: blue solid;
         color: $silver;
         font-size: 0.75rem;
         font-weight: 700;
@@ -129,7 +124,6 @@
 
     &-description-input {
         width: 100%;
-        // border: green solid;
         border-radius: 0.25rem;
         border: 1px solid $mercury;
         box-sizing: border-box;
@@ -186,7 +180,6 @@
     }
 
     &-cancel {
-        // margin-top: 1rem;
 
         border: none;
         text-decoration: none;

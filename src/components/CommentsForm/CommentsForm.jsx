@@ -30,7 +30,7 @@ const CommentsForm = ({postComment, currentVideo}) => {
     useEffect(() => {
         setTextFieldError("");
     }, [currentVideo])
-    
+
 
     const handleCommentChange = (event) => {
 
@@ -58,7 +58,6 @@ const CommentsForm = ({postComment, currentVideo}) => {
                                 <label className="form__comment-label form__comment-text--label" htmlFor="comment"> JOIN THE CONVERSATION </label>
                                 <textarea  value={newComment} onChange={handleCommentChange} className={`form__comment-text form__comment-text${textFieldError}`} id="comment" name="comment" placeholder="Add a new comment" ></textarea>
                             </div>
-                            {/* className="form__comment-text form__comment-text--value" */}
 
                             <div className="form__comment__btn-container">
                                 <button  type="submit" className="form__comment-btn"> COMMENT </button>

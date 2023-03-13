@@ -1,6 +1,5 @@
 
 import '../VideoUpload/VideoUpload.scss';
-import Header from '../../components/Header/Header';
 import uploadThumbnail from '../../assets/Images/Upload-video-preview.jpg'
 import { Link, NavLink } from 'react-router-dom';
 
@@ -15,7 +14,6 @@ const VideoUpload = () => {
     return (
         <>
             <section className="form__section">
-                {/* <h1>Welcome to upload Page</h1> */}
                 <h1 className="form__section-title"> Upload Video </h1>
                 <form className="form__section-form">
 
