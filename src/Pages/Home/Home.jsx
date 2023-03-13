@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
 import CurrentVideo from "../../components/CurrentVideo/CurrentVideo";
 import VideoList from '../../components/VideoList/VideoList'
 import MainContent from "../../components/MainContent/MainContent";
@@ -53,6 +52,7 @@ const Home = () => {
     // fires the side effect of useEffect after every render when there is no second argument
     useEffect(() => {
         getVideos();
+        document.title = 'Home';
     }, [])
 
     function getCurrentVideo(id) {
@@ -60,6 +60,7 @@ const Home = () => {
         .get(`https://project-2-api.herokuapp.com/${request}/${id}/?api_key=${apiKey}`)
         .then( (response) => {
         setCurrentVideo(response.data)
+        document.title = `${response.data.title}}`;
         }).catch ( (err) => {
         console.log(`Videos API error :` , err);
         })
@@ -68,20 +69,18 @@ const Home = () => {
 
   // empy square brackets [] means on page mount (page renders)
   useEffect(() => {
+
     if (videoId) {
         getCurrentVideo(videoId);
     } else if(videosList.length){
-        // getCurrentVideo('84e96018-4022-434e-80bf-000ce4cd12b8')
         let ranNum = getRandomVid(videosList.length)
-        console.log(`Inside use effect random number `);
-        console.log(ranNum);
-        getCurrentVideo(videosList[ranNum].id)
+        let curVid = videosList[ranNum].id;
+        getCurrentVideo(curVid)
+
     }
     // videoId is a dependency which means that the use effect will run the code when the videoId variable has changed
-
+    window.scrollTo(0, 0)
   }, [videoId, videosList])
-
-
 
   const postComment = (newComment) => {
     const postCommentUrl = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments?api_key=${apiKey}`;
@@ -98,9 +97,7 @@ const Home = () => {
   }
 
   const deleteComment = (commentId) => {
-    console.log("Current vid id is ", currentVideo.id)
-    console.log("Request is ", request)
-    console.log("Comment Id is: ", commentId)
+    
     const deleteComment = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments/${commentId}?api_key=${apiKey}`
 
     axios

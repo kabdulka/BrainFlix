@@ -6,6 +6,8 @@ import { Link, NavLink } from 'react-router-dom';
 
 const VideoUpload = () => {
 
+    document.title = 'Upload';
+
     const handlePublishClick = () => {
         console.log("cliock")
         alert("You've successfully published your video")

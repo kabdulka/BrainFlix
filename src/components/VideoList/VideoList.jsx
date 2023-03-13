@@ -1,10 +1,6 @@
-import videosData from '../../Data/video-details.json';
-import { useState, useEffect } from "react";
-import axios from "axios";
 import Video from '../Video/Video';
 
 import '../VideoList/VideoList.scss';
-import { Link } from 'react-router-dom';
 
 
 const VideoList = ({videos, handleVideoChange}) => {
