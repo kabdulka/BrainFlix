@@ -4,8 +4,12 @@ import viewsIcon from '../../assets/Icons/views.svg'
 import { getFormattedDate } from '../../App';
 
 
-const MainContent = ({currentVideo}) => {
+const MainContent = ({currentVideo, likeVideo}) => {
 
+
+    const handleVideoLike = () => {
+        likeVideo(currentVideo.di)
+    }
 
     return (
         <>
@@ -28,7 +32,7 @@ const MainContent = ({currentVideo}) => {
                             <p className="current-video__views"> {currentVideo.views} </p>
                         </div>
                         <div className="current-video__likes-container">
-                            <img src={likesIcon}/>
+                            <img onClick={handleVideoLike} className="current-video__likes-icon" src={likesIcon}/>
                             <p className="current-video__likes"> {currentVideo.likes} </p>
                             
                         </div>

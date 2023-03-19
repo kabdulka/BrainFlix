@@ -6,6 +6,7 @@ import "./CurrentVideo.scss";
 
 
 const CurrentVideo = ({currentVideo}) => {
+    console.log("current video ", currentVideo.image);
     return ( 
         <>
             <section className="selected-Video"> 

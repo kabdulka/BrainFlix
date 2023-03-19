@@ -51,6 +51,8 @@
         }
     }
 
+
+
     &__description {
 
         font-size: 0.85rem;
@@ -134,7 +136,17 @@
         margin: 0;
         font-size: 0.85rem;
         color: $silver;
+        
     }
+
+    &__likes-icon {
+    
+        &:hover {
+            filter: invert(1) sepia(1) saturate(120) hue-rotate(10deg);
+            cursor: pointer;
+        }
+    }
+
     &__views {
         margin: 0;
         font-size: 0.85rem;
@@ -152,4 +164,11 @@
     height: 10rem;
     width: 100%;
 }
+
+
+// .current-video__likes-icon {
+//     :hover {
+//         background-color: red;
+//     }
+// }
 

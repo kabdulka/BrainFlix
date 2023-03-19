@@ -6,7 +6,7 @@ import { Link} from "react-router-dom";
 function Video({videoObj }) {
 
 
-
+  console.log(videoObj.image)
 
   return (
     <>

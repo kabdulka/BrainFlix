@@ -10,10 +10,6 @@ const Comment = ({currentComment, deleteComment}) => {
         deleteComment(currentComment.id)
     }
 
-    // function handleClick () {
-
-    // }
-
     return ( 
         <>
             <li className="comment__item">

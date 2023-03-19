@@ -16,13 +16,10 @@ const VideoList = ({videos, handleVideoChange}) => {
    
                         <Video  
                                 key={video.id} 
-                                id={video.id} 
-                                image={video.image} 
-                                title={video.title} 
-                                channel={video.channel}
+                               
                                 videoObj = {video}
                                 handleVideoChange = {handleVideoChange} 
-                                />
+                        />
                     )}
                 </ul>
 

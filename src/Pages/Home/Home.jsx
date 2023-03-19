@@ -8,12 +8,18 @@ import MainContent from "../../components/MainContent/MainContent";
 import CommentList from "../../components/CommentList/CommentList";
 import CommentsForm from "../../components/CommentsForm/CommentsForm"
 
+// use environment variables stored in .env, needs to be prefixed with REACT_APP_ in React apps
+const API_URL = process.env.REACT_APP_API_URL;
+
+//Way to check which environment you are in
+console.log(process.env.NODE_ENV);
 
 const Home = () => {
 
     const apiKey = `789bb1ed-ef63-4f3c-a3fc-e83987bf2396`;
     let request = `videos`
-    const videosUrl = `https://project-2-api.herokuapp.com/${request}/?api_key=${apiKey}`;
+    // const videosUrl = `https://project-2-api.herokuapp.com/${request}/?api_key=${apiKey}`;
+    const videosUrl = `${API_URL}/${request}`
 
 
     const [videosList, setVideosList] = useState([]);
@@ -24,7 +30,7 @@ const Home = () => {
    
     const {videoId} = useParams()
 
-    console.log(videoId)
+    // console.log(videoId)
 
     function getRandomVid (vidListLen) {
         return Math.floor((Math.random() * vidListLen));
@@ -35,7 +41,7 @@ const Home = () => {
         axios
             .get(videosUrl)
             .then((response) => {
-  
+              // check if it exists
                 setVideosList(response.data);
 
             }).then(response => {
@@ -57,7 +63,8 @@ const Home = () => {
 
     function getCurrentVideo(id) {
         axios
-        .get(`https://project-2-api.herokuapp.com/${request}/${id}/?api_key=${apiKey}`)
+        // .get(`https://project-2-api.herokuapp.com/${request}/${id}/?api_key=${apiKey}`)
+        .get(`${API_URL}/${request}/${id}`)
         .then( (response) => {
         setCurrentVideo(response.data)
         document.title = `${response.data.title}}`;
@@ -74,6 +81,8 @@ const Home = () => {
         getCurrentVideo(videoId);
     } else if(videosList.length){
         let ranNum = getRandomVid(videosList.length)
+
+        let testLen = videosList.length-1 // temp var
         let curVid = videosList[ranNum].id;
         getCurrentVideo(curVid)
 
@@ -82,13 +91,14 @@ const Home = () => {
     window.scrollTo(0, 0)
   }, [videoId, videosList])
 
-  const postComment = (newComment) => {
-    const postCommentUrl = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments?api_key=${apiKey}`;
 
+  const postComment = (newComment) => {
+    // const postCommentUrl = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments?api_key=${apiKey}`;
+    const postCommentUrl = `${API_URL}/${request}/${currentVideo.id}/comments`
     axios
         .post(postCommentUrl, newComment )
         .then( (response) => {
-            getCurrentVideo(videoId);
+            getCurrentVideo(currentVideo.id);
         })
         .catch((err) => {
             console.log("Comment post error", err);
@@ -98,17 +108,34 @@ const Home = () => {
 
   const deleteComment = (commentId) => {
     
-    const deleteComment = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments/${commentId}?api_key=${apiKey}`
-
+    // const deleteComment = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments/${commentId}?api_key=${apiKey}`
+    const deleteCommentUrl = `${API_URL}/${request}/${currentVideo.id}/comments/${commentId}`;
     axios
-        .delete(deleteComment)
+        .delete(deleteCommentUrl)
         .then((response ) => {
-            getCurrentVideo(videoId)
+            getCurrentVideo(currentVideo.id)
         })
         .catch( (err) => {
-            console.log("Comment post error", err);
+            console.log("delete post error", err);
         });
   }
+
+
+  const likeVideo = (videoId) => {
+   
+    const url = `http://localhost:9000/videos/${currentVideo.id}/likes`;
+    alert("Video Liked")
+    axios
+    .put(url)
+    .then(response => {
+        console.log(response.data)
+        getCurrentVideo(currentVideo.id)
+    })
+    .catch( (err) => {
+        console.log("Could not like video", err);
+
+    })
+}
 	
   function handleVideoChange (newVideo) {
     setCurrentVideo(newVideo);
@@ -117,12 +144,12 @@ const Home = () => {
     return ( 
         currentVideo && videosList ? 
         <>
-          <CurrentVideo  currentVideo={currentVideo}/>
+          <CurrentVideo getCurrentVideo={getCurrentVideo}  currentVideo={currentVideo}/>
           <div className="app__contant">
             <div className="main__content">
               <div className="main__content-left">
                 
-                <MainContent currentVideo={currentVideo} />
+                <MainContent currentVideo={currentVideo} likeVideo={likeVideo}/>
                 <CommentsForm currentVideo={currentVideo} postComment={postComment} />
                 <CommentList deleteComment={deleteComment} currentVideo={currentVideo}/>
               </div>

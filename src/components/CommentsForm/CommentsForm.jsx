@@ -1,11 +1,9 @@
 import './CommentsForm.scss';
 import avatar from '../../assets/Images/Mohan-muruge.jpg';
 import { useState, useEffect} from 'react';
-// import axios from 'axios';
 
 const CommentsForm = ({postComment, currentVideo}) => {
     
-    // const newComment = {};
     const [newComment, setNewComment] = useState("")
     const [textFieldError, setTextFieldError] = useState("");
 
@@ -17,7 +15,6 @@ const CommentsForm = ({postComment, currentVideo}) => {
         } else {
             setTextFieldError("");
             const newCommentObj = {
-                name: "Anonymous",
                 comment: newComment
             };
 
