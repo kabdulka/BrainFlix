@@ -1,14 +1,13 @@
 
 import '../VideoUpload/VideoUpload.scss';
 import uploadThumbnail from '../../assets/Images/Upload-video-preview.jpg'
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 
 const VideoUpload = () => {
 
     const API_URL = process.env.REACT_APP_API_URL;
-    console.log(API_URL)
     const navigate = useNavigate();
 
     const postVideo = (newVideo) => {
@@ -16,8 +15,6 @@ const VideoUpload = () => {
         axios
         .post(postVideoUrl, newVideo)
         .then( (response) => {
-          console.log("here")
-          console.log(response)
         })
         .catch(err => {
           console.log("could not post a new video ", err);
@@ -28,8 +25,6 @@ const VideoUpload = () => {
     const [newDescription, setDescription] = useState("")
 
     document.title = 'Upload';
-
-    console.log("inside upload")
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -59,12 +54,10 @@ const VideoUpload = () => {
 
     const handleTitleUpload = (event) => {
         setTitle(event.target.value)
-        console.log("here")
     }
 
     const handleDescriptionUpload = (event) => {
         setDescription(event.target.value)
-        console.log("here2")
     }
 
     return (

@@ -12,7 +12,7 @@ import CommentsForm from "../../components/CommentsForm/CommentsForm"
 const API_URL = process.env.REACT_APP_API_URL;
 
 //Way to check which environment you are in
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 
 const Home = () => {
 
@@ -21,16 +21,12 @@ const Home = () => {
     // const videosUrl = `https://project-2-api.herokuapp.com/${request}/?api_key=${apiKey}`;
     const videosUrl = `${API_URL}/${request}`
 
-
     const [videosList, setVideosList] = useState([]);
-
 
     // Initialize the current video to be the first video object in the json array of objects
     const [currentVideo, setCurrentVideo] = useState(null);
    
     const {videoId} = useParams()
-
-    // console.log(videoId)
 
     function getRandomVid (vidListLen) {
         return Math.floor((Math.random() * vidListLen));
@@ -128,7 +124,6 @@ const Home = () => {
     axios
     .put(url)
     .then(response => {
-        console.log(response.data)
         getCurrentVideo(currentVideo.id)
     })
     .catch( (err) => {
