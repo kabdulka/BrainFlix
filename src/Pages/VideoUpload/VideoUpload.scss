@@ -3,8 +3,6 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
-
-
 .form__section {
     border-top: 1px solid $mercury;
 
@@ -168,6 +166,7 @@
         font-size: 0.75rem;
         font-weight: 700;
         border-radius: 0.25rem;
+        border: none;
 
         @include tablet {
             order: 2;
