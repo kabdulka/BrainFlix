@@ -1,4 +1,3 @@
-// import jsonData from '../../Data/video-details.json';
 import Comment from '../Comment/Comment';
 import '../CommentList/CommentList.scss';
 

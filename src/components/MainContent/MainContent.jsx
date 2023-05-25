@@ -8,7 +8,7 @@ const MainContent = ({currentVideo, likeVideo}) => {
 
 
     const handleVideoLike = () => {
-        likeVideo(currentVideo.di)
+        likeVideo(currentVideo.id)
     }
 
     return (

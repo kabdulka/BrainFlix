@@ -50,7 +50,6 @@
 
         @include desktop {
             align-items: center;
-            // padding-bottom: 2rem;
             padding-right: 1.5rem;
             padding-left: 1.25rem;
             gap: 2rem;
@@ -168,12 +167,13 @@
             background-color: $albaster;
             resize: none;
             font-family: 'avenir';
-            // review box-sizing
             box-sizing: border-box;
-            height: 2.5rem;
+            height: 10rem;
             padding: 0.62rem;
            
-           
+           @include tablet {
+            height: 2.5rem;
+           }
     
             &::placeholder {
                 color: black;
@@ -225,7 +225,6 @@
     border-radius: 50%;
 
     &--form {
-        // margin-top: 1.25rem;
     }
 
     @include tablet {

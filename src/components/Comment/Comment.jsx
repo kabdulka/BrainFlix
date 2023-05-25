@@ -14,7 +14,6 @@ const Comment = ({currentComment, deleteComment}) => {
         <>
             <li className="comment__item">
                 <div className="comment__image-container comment__image-container__form">
-                    {/* <img className="comment__image" src="" alt=""  /> */}
                 </div>
                 <div className="comment__info">
                     <div className="comment__info__row-1">
@@ -25,11 +24,8 @@ const Comment = ({currentComment, deleteComment}) => {
                         <p className="comment__value"> 
                             {currentComment.comment}
                         </p>
-                        {/* <div className="form__comment__btn-container"> */}
-                                <a onClick={(handleClick)} className="comment__delete"> DELETE </a>
-                                {/* <a onClick={() => {deleteComment(currentComment.id)}} className="comment__delete"> DELETE </a> */}
+                        <a onClick={(handleClick)} className="comment__delete"> DELETE </a>
 
-                        {/* </div> */}
                     </div>
 
      

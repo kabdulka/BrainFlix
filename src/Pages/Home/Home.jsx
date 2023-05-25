@@ -11,14 +11,10 @@ import CommentsForm from "../../components/CommentsForm/CommentsForm"
 // use environment variables stored in .env, needs to be prefixed with REACT_APP_ in React apps
 const API_URL = process.env.REACT_APP_API_URL;
 
-//Way to check which environment you are in
-// console.log(process.env.NODE_ENV);
-
 const Home = () => {
 
     const apiKey = `789bb1ed-ef63-4f3c-a3fc-e83987bf2396`;
     let request = `videos`
-    // const videosUrl = `https://project-2-api.herokuapp.com/${request}/?api_key=${apiKey}`;
     const videosUrl = `${API_URL}/${request}`
 
     const [videosList, setVideosList] = useState([]);
@@ -59,7 +55,6 @@ const Home = () => {
 
     function getCurrentVideo(id) {
         axios
-        // .get(`https://project-2-api.herokuapp.com/${request}/${id}/?api_key=${apiKey}`)
         .get(`${API_URL}/${request}/${id}`)
         .then( (response) => {
         setCurrentVideo(response.data)
@@ -89,7 +84,6 @@ const Home = () => {
 
 
   const postComment = (newComment) => {
-    // const postCommentUrl = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments?api_key=${apiKey}`;
     const postCommentUrl = `${API_URL}/${request}/${currentVideo.id}/comments`
     axios
         .post(postCommentUrl, newComment )
@@ -104,7 +98,6 @@ const Home = () => {
 
   const deleteComment = (commentId) => {
     
-    // const deleteComment = `https://project-2-api.herokuapp.com/${request}/${currentVideo.id}/comments/${commentId}?api_key=${apiKey}`
     const deleteCommentUrl = `${API_URL}/${request}/${currentVideo.id}/comments/${commentId}`;
     axios
         .delete(deleteCommentUrl)

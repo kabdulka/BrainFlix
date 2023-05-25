@@ -31,15 +31,12 @@ const VideoUpload = () => {
         console.log("click")
         if (newTitle.length < 2 || newDescription.length < 2) {
             alert("enter more than 2 letters")
-            // setTextFieldError("--error");
         } else {
-            // setTextFieldError("");
             const newVideoObj = {
                 title: newTitle,
                 description: newDescription
             };
 
-            // postComment(newCommentObj)
             postVideo(newVideoObj)
            
             setTitle("");
@@ -47,7 +44,6 @@ const VideoUpload = () => {
             // navigate will route to home
             navigate("/")
         }
-        // alert("You've successfully published your video")
 
 
     }

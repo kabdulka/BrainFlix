@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
 
-
     return ( 
         <>
             <header className="header">
@@ -24,9 +23,7 @@ const Header = () => {
                 <div className="header__content">
                     <input className="header__search-input" type="text" id="search" name="search" placeholder="Search"/>
                     <img src={avatar} className="header__avatar" />
-                    {/* <button className="header__upload"> UPLOAD </button> */}
                     <Link className="header__upload" to="/upload">
-                        {/* <button > UPLOAD </button> */}
                         UPLOAD
                     </Link>
                     
